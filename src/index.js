@@ -2,11 +2,11 @@ import {getUsers} from './api/userApi';
 
 //Populate table of users via api call
 
-getUsers().then(result =>{
-  let userBody = "";
+getUsers().then(result => {
+  let usersBody = "";
 
-  result.forEach(user =>{
-    userBody+= `<tr>
+  result.forEach(user => {
+    usersBody+= `<tr>
     <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
     <td>${user.id}</td>
     <td>${user.firstName}</td>
@@ -15,6 +15,6 @@ getUsers().then(result =>{
     </tr>`
   });
 
-global.document.getElementById('users').innerHTML = userBody;
+global.document.getElementById('users').innerHTML = usersBody;
 });
 
